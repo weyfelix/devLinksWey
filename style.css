@@ -1,0 +1,170 @@
+:root {
+
+    --text-md-size: 1rem;
+    --text-md-lineHeight: 1.5rem;
+    --text-md-weight: 500;
+
+    --text-sm-size: 0.875rem;
+    --text-sm-lineHeight: 1.5rem;
+    --text-sm-weight: 400;
+
+    --text-color-mode: rgba(255, 255, 255);
+    --text-color-mode-second: rgba(255, 255, 255);
+    --stroke-color-mode: rgba(255, 255, 255, 0.5);
+    --surface-color-mode: rgba(255, 255, 255, 0.1);
+    --surface-color-mode-hover: rgba(255, 255, 255, 0.05);
+    --highlight-color-mode: rgba(255, 255, 255, 0.2);
+
+    --bg-url: url("./assets/bg-mobile.jpg") no-repeat top center/cover;
+
+    --url-switch: url("./assets/MoonStars.svg");
+}
+
+.light {
+    --text-color-mode: rgba(0, 0, 0);
+    --stroke-color-mode: rgba(0, 0, 0, 0.5);
+    --surface-color-mode: rgba(0, 0, 0, 0.05);
+    --surface-color-mode-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color-mode: rgba(0, 0, 0, 0.1);
+
+    --bg-url: url("./assets/bg-mobile-light.jpg") no-repeat top center/cover;
+
+    --url-switch: url("./assets/Sun.svg");
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--text-color-mode);
+    font-family: 'Inter', sans-serif;
+
+    font-weight: var( --text-md-weight);
+    line-height: var(--text-md-lineHeight);
+}
+
+body {
+    background: var(--bg-url);
+}
+
+
+.container {
+    width: 22.5rem;
+    display: block;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    margin: 3.5rem auto;
+
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+}
+
+.profile > img {
+    width: 7rem;
+    height: 7rem;
+    color: var(--stroke-color-mode);
+    border-radius: 50%;
+}
+
+.switch {
+    position: relative;
+    width: 4rem;
+    margin: 0.25rem auto;
+}
+
+.switch button {
+    width: 2rem;
+    height: 2rem;
+    background: var(--text-color-mode-second) var(--url-switch) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: initial;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.light .switch button {
+    right: 0;
+    left: initial;
+}
+
+.switch span {
+    display: block;
+    width: 4rem;
+    height: 1.5rem;
+    background: var(--surface-color-mode);
+    border: 1px solid var(--stroke-color-mode);
+    backdrop-filter: blur(4px);
+    --webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+ul {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    background: var(--surface-color-mode);
+    border-radius: 8px;
+    border: 1px solid var(--stroke-color-mode);
+    text-decoration: none;
+
+    backdrop-filter: blur(4px);
+    --webkit-backdrop-filter: blur(4px);
+
+    font-weight: var(--text-md-weight);
+
+    transition: background 0.3s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-mode-hover);
+    border: 1.5px solid var(--text-color-mode);
+}
+
+
+.socialLinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 0 ;
+    font-size: 2.5rem;
+
+}
+
+.socialLinks a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 50%;
+
+    transition: background 0.3s;
+}
+
+.socialLinks a:hover {
+    background: var(--highlight-color-mode);
+}
+
+.footer {
+    text-align: center;
+}
